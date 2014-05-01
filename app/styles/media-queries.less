@@ -1,0 +1,24 @@
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+// Extra small screen / phone
+@screen-xs:                  480px;
+@screen-phone:               @screen-xs;
+
+// Small screen / tablet
+@screen-s:                   768px;
+@screen-tablet:              @screen-s;
+
+// Medium screen / desktop
+@screen-m:                   990px;
+@screen-desktop:             @screen-m;
+
+// Large screen / wide desktop
+@screen-l:                   1200px;
+@screen-desktop-big:         @screen-l;
+
+// So media queries don't overlap when required, provide a maximum
+@screen-xs-max:              (@screen-s - 1);
+@screen-s-max:               (@screen-m - 1);
+@screen-m-max:               (@screen-l - 1);

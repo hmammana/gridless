@@ -1,0 +1,173 @@
+@font-face {
+    font-family: 'BLOKKRegular';
+    src: url('../fonts/BLOKKNeue-Regular.eot');
+    src: url('../fonts/BLOKKNeue-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/BLOKKNeue-Regular.woff') format('woff'),
+         url('../fonts/BLOKKNeue-Regular.svg#BLOKKRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// Variables
+//---------------------------------------------
+//Colors
+@gray-lightest:          #ddd;
+@gray-lighter:           #D9D9D9;
+@gray:                   #555;
+
+@ml-yellow:              #FFF059;
+@ml-blue:                #0637b3;
+@ml-green:               #390;
+@wine:                   #900;
+
+//Font
+@font-size-base:          14px;
+@font-family-sans-serif:  Arial,Helvetica,"Nimbus Sans L",sans-serif;
+@font-family-blokk:       "BLOKKRegular", helvetica, arial, sans-serif;
+@font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
+@font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
+@font-size-h1:            floor((@font-size-base * 2.4)); // ~36px
+@font-size-h2:            floor((@font-size-base * 2.15)); // ~30px
+@font-size-h3:            ceil((@font-size-base * 1.7)); // ~24px
+@font-size-h4:            ceil((@font-size-base * 1.25)); // ~18px
+
+//Navbar
+@navbar-height:          55px;
+
+//Mixins
+//---------------------------------------------
+.size(@width, @height) {
+  width: @width;
+  height: @height;
+}
+
+// Example Styles
+//---------------------------------------------
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: @font-family-sans-serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: @font-size-h1;
+}
+
+h2 {
+  font-size: @font-size-h2;
+}
+
+h3 {
+  font-size: @font-size-h3;
+}
+
+h4 {
+  font-size: @font-size-h4;
+}
+
+a {
+  color: @ml-blue;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+body {
+  font: @font-size-base/1.4 @font-family-blokk;
+  -webkit-font-smoothing: antialiased;
+  color: @gray;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  .size(100%, @navbar-height);
+  background: @ml-yellow;
+  border-bottom: 1px solid @gray-lighter;
+}
+
+.content {
+  max-width: 1200px;
+  padding-top: @navbar-height;
+  margin: 0 auto;
+}
+
+.title {
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.title-line {
+  width: 40%;
+  max-width: 360px;
+  margin: 0 auto 40px;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid @gray-lightest;
+}
+
+.product-img {
+  display: block;
+  .size(100%, auto);
+  margin-bottom: 20px;
+}
+
+.ch-price {
+  margin-top: 10px;
+  font: @font-size-h1 @font-family-sans-serif;
+  color: @wine;
+}
+
+.btn-mock {
+  padding: 15px;
+  color: white;
+  background: lighten(@ml-blue, 15%);
+  border: 0;
+  border-radius: 8px;
+
+  &:hover {
+    background: lighten(@ml-blue, 20%);
+  }
+}
+
+.short-description {
+  padding: 15px 0;
+  background: #f4f4f4;
+
+  .row {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .ch-price {
+    margin-bottom: 30px;
+  }
+
+  .payment-info {
+    margin-bottom: 45px;
+  }
+
+  .shipping-info {
+    margin-bottom: 45px;
+
+    span {
+      color: @ml-green;
+    }
+  }
+
+  .btn-buy {
+    width: 140px;
+    margin-bottom: 20px;
+  }
+}
