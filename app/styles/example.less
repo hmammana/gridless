@@ -1,3 +1,5 @@
+@import "variables.less";
+
 @font-face {
     font-family: 'BLOKKRegular';
     src: url('../fonts/BLOKKNeue-Regular.eot');
@@ -8,11 +10,13 @@
     font-style: normal;
 }
 
+
 // Variables
 //---------------------------------------------
 //Colors
-@gray-lightest:          #ddd;
-@gray-lighter:           #D9D9D9;
+@gray-lightest:          #f4f4f4;
+@gray-lighter:           #ddd;
+@gray-light:             #D9D9D9;
 @gray:                   #555;
 
 @ml-yellow:              #FFF059;
@@ -27,12 +31,13 @@
 @font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
 @font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
 @font-size-h1:            floor((@font-size-base * 2.4)); // ~36px
-@font-size-h2:            floor((@font-size-base * 2.15)); // ~30px
-@font-size-h3:            ceil((@font-size-base * 1.7)); // ~24px
+@font-size-h2:            floor((@font-size-base * 2.1)); // ~30px
+@font-size-h3:            ceil((@font-size-base * 1.6)); // ~24px
 @font-size-h4:            ceil((@font-size-base * 1.25)); // ~18px
 
 //Navbar
 @navbar-height:          55px;
+
 
 //Mixins
 //---------------------------------------------
@@ -41,10 +46,17 @@
   height: @height;
 }
 
+
 // Example Styles
 //---------------------------------------------
 * {
   box-sizing: border-box;
+}
+
+html {
+  /* for better scroll fluidity in mobile webkit devices */
+  overflow-y: scroll; 
+  -webkit-overflow-scrolling: touch;
 }
 
 h1,
@@ -80,7 +92,20 @@ a {
   }
 }
 
+.color-danger {
+  color: #F6898D;
+}
+
+.color-warning {
+  color: darken(@ml-yellow, 10%);
+}
+
+.color-success {
+  color: lighten(@ml-green, 10%);
+}
+
 body {
+  padding-top: @navbar-height;
   font: @font-size-base/1.4 @font-family-blokk;
   -webkit-font-smoothing: antialiased;
   color: @gray;
@@ -94,12 +119,11 @@ body {
   z-index: 1000;
   .size(100%, @navbar-height);
   background: @ml-yellow;
-  border-bottom: 1px solid @gray-lighter;
+  border-bottom: 1px solid @gray-light;
 }
 
-.content {
-  max-width: 1200px;
-  padding-top: @navbar-height;
+.content-wrapper {
+  max-width: @screen-l;
   margin: 0 auto;
 }
 
@@ -110,11 +134,11 @@ body {
 
 .title-line {
   width: 40%;
-  max-width: 360px;
+  max-width: 350px;
   margin: 0 auto 40px;
   background: transparent;
   border: 0;
-  border-top: 1px solid @gray-lightest;
+  border-top: 1px solid @gray-lighter;
 }
 
 .product-img {
@@ -132,7 +156,7 @@ body {
 .btn-mock {
   padding: 15px;
   color: white;
-  background: lighten(@ml-blue, 15%);
+  background: lighten(@ml-blue, 25%);
   border: 0;
   border-radius: 8px;
 
@@ -141,9 +165,29 @@ body {
   }
 }
 
+.with-border {
+  border-left: 1px solid @gray-lighter;
+}
+
+.reputation-box {
+  padding: 15px 25px;
+  margin-bottom: 25px;
+  background: @gray-lightest;
+  border-radius: 5px;
+}
+
+.product-description-box {
+  min-height: 100px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid @gray-lighter;
+  border-radius: 5px;
+}
+
 .short-description {
   padding: 15px 0;
-  background: #f4f4f4;
+  margin-bottom: 50px;
+  background: @gray-lightest;
 
   .row {
     max-width: 900px;
@@ -167,7 +211,11 @@ body {
   }
 
   .btn-buy {
-    width: 140px;
+    width: 160px;
     margin-bottom: 20px;
   }
+}
+
+.seller-info {
+  margin-bottom: 80px;
 }

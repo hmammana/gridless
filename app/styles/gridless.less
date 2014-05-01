@@ -1,18 +1,7 @@
-@import "media-queries.less";
-
-/* Grid system
--------------------------------------------*/
-
-// Total number of columns in the grid.
-@grid-columns:              12;
-// Total padding (right and left added) by column
-@gutter-total-width:        20px;
+@import "variables.less";
 
 // Creates a wrapper for a series of columns
 .row {
-  margin-right: (@gutter-total-width / -2);
-  margin-left: (@gutter-total-width / -2);
-
   &:before,
   &:after {
     display: table;
@@ -23,6 +12,17 @@
   }
 }
 
+.row-margin {
+  margin-right: (@gutter-total-width / 2);
+  margin-left: (@gutter-total-width / 2);
+}
+
+.row-margin-negative {
+  margin-right: (@gutter-total-width / -2);
+  margin-left: (@gutter-total-width / -2);
+}
+
+// Columns basic styles
 .col {
   position: relative;
   float: left;
@@ -43,6 +43,7 @@
   width: percentage((@columns / @grid-columns));
 }
 
+// Columns sizes for different screens resolutions
 .xs-1 {
   .column-size(1);
 }
@@ -91,7 +92,7 @@
   .column-size(12);
 }
 
-@media (min-width: (@screen-xs + 1)) {
+@media (min-width: (@screen-xs-max)) {
   .s-1 {
     .column-size(1);
   }
@@ -141,7 +142,7 @@
   }
 }
 
-@media (min-width: (@screen-s + 1)) {
+@media (min-width: (@screen-s-max)) {
   .m-1 {
     .column-size(1);
   }
@@ -191,7 +192,7 @@
   }
 }
 
-@media (min-width: (@screen-m + 1)) {
+@media (min-width: (@screen-m-min)) {
   .l-1 {
     .column-size(1);
   }
