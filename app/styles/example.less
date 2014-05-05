@@ -30,10 +30,11 @@
 @font-family-blokk:       "BLOKKRegular", helvetica, arial, sans-serif;
 @font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
 @font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
-@font-size-h1:            floor((@font-size-base * 2.4)); // ~36px
+@font-size-h1:            floor((@font-size-base * 2.3)); // ~36px
 @font-size-h2:            floor((@font-size-base * 2.1)); // ~30px
 @font-size-h3:            ceil((@font-size-base * 1.6)); // ~24px
 @font-size-h4:            ceil((@font-size-base * 1.25)); // ~18px
+
 
 //Navbar
 @navbar-height:          55px;
@@ -132,6 +133,10 @@ body {
   text-align: center;
 }
 
+.side-title {
+  margin-top: 0;
+}
+
 .title-line {
   width: 40%;
   max-width: 350px;
@@ -154,7 +159,7 @@ body {
 }
 
 .btn-mock {
-  padding: 15px;
+  padding: 10px 15px;
   color: white;
   background: lighten(@ml-blue, 25%);
   border: 0;
@@ -180,7 +185,7 @@ body {
   min-height: 100px;
   padding: 20px;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 60px;
   border: 1px solid @gray-lighter;
   border-radius: 5px;
 
@@ -206,6 +211,14 @@ body {
     margin: 0 auto;
   }
 
+  .ch-carousel-mask {
+    margin: 0;
+  }
+
+  .ch-carousel-pages {
+    margin: -7px auto 10px;
+  }
+
   .ch-price {
     margin-bottom: 30px;
   }
@@ -223,11 +236,24 @@ body {
   }
 
   .btn-buy {
-    width: 160px;
+    display: block;
+    min-width: 160px;
     margin-bottom: 20px;
+    line-height: 27px;
+
+    @media (max-width: (@screen-xs)) { 
+      width: 94%;
+      margin: 0 auto 30px;
+    }
   }
 }
 
 .seller-info {
   margin-bottom: 80px;
+
+  @media (max-width: (@screen-xs)) { 
+    .link-more-info {
+      padding-left: (@gutter-total-width / 2);
+    }
+  }
 }

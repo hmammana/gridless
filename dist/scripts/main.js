@@ -1,1 +1,1 @@
-console.log("'Allo 'Allo!");
+$(".carousel").carousel({pagination:!1});
