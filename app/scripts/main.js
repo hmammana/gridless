@@ -1,3 +1,1 @@
-$('.carousel').carousel({
-	pagination: false
-});
+$('.carousel').carousel();

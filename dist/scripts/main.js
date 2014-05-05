@@ -1,1 +1,1 @@
-$(".carousel").carousel({pagination:!1});
+$(".carousel").carousel();

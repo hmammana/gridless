@@ -1,5 +1,4 @@
 'use strict';
-// generated on 2014-05-01 using generator-gulp-webapp 0.1.0
 
 var gulp = require('gulp');
 
@@ -55,7 +54,8 @@ gulp.task('images', function () {
 });
 
 gulp.task('fonts', function () {
-    return gulp.src('app/fonts/**/*.{eot,svg,ttf,woff}')
+    return gulp.src('app/**/*.{eot,svg,ttf,woff}')
+        .pipe($.flatten())
         .pipe(gulp.dest('dist/fonts'))
         .pipe($.size());
 });
