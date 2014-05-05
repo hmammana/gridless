@@ -29,13 +29,6 @@
   padding-right: (@gutter-total-width / 2);
   padding-left: (@gutter-total-width / 2);
   box-sizing: border-box;
-
-  &.xs-no-padding,
-  &.s-no-padding,
-  &.m-no-padding,
-  &.l-no-padding {
-    padding: 0;
-  }
 }
 
 // Columns formula
@@ -92,6 +85,15 @@
   .column-size(12);
 }
 
+@media (max-width: (@screen-xs)) {
+  
+  .xs-no-padding {
+    padding: 0;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
 @media (min-width: (@screen-xs-max)) {
   .s-1 {
     .column-size(1);
@@ -140,6 +142,19 @@
   .s-12 {
     .column-size(12);
   }
+
+  .s-no-padding {
+    padding: 0;
+  }
+
+}
+
+@media (min-width: (@screen-xs-max)) and (max-width: (@screen-s)) {
+  
+  .s-no-padding {
+    padding: 0;
+  }
+
 }
 
 @media (min-width: (@screen-s-max)) {
@@ -190,6 +205,18 @@
   .m-12 {
     .column-size(12);
   }
+
+  .m-no-padding {
+    padding: 0;
+  }
+}
+
+@media (min-width: (@screen-s-max)) and (max-width: (@screen-m)) {
+  
+  .m-no-padding {
+    padding: 0;
+  }
+
 }
 
 @media (min-width: (@screen-m-min)) {
@@ -240,4 +267,16 @@
   .l-12 {
     .column-size(12);
   }
+
+  .l-no-padding {
+    padding: 0;
+  }
+}
+
+@media (min-width: (@screen-m-max)) and (max-width: (@screen-l)) {
+  
+  .l-no-padding {
+    padding: 0;
+  }
+
 }

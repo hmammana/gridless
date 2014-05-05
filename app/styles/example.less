@@ -178,10 +178,22 @@ body {
 
 .product-description-box {
   min-height: 100px;
+  padding: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
   border: 1px solid @gray-lighter;
   border-radius: 5px;
+
+  img {
+    display: block;
+    .size(100%, auto);
+    max-width: 800px;
+    margin: 15px auto 25px;
+  }
+
+  @media (max-width: (@screen-xs)) { 
+    border-radius: 0;
+  }
 }
 
 .short-description {
