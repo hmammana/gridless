@@ -26,6 +26,7 @@
 .col {
   position: relative;
   float: left;
+  width: 100%;
   padding-right: (@gutter-total-width / 2);
   padding-left: (@gutter-total-width / 2);
   box-sizing: border-box;
@@ -85,7 +86,7 @@
   .column-size(12);
 }
 
-@media (max-width: (@screen-xs)) {
+@media (max-width: (@screen-s-min)) {
   
   .xs-no-padding {
     padding: 0;
@@ -94,7 +95,7 @@
   }
 }
 
-@media (min-width: (@screen-xs-max)) {
+@media (min-width: (@screen-s)) {
   .s-1 {
     .column-size(1);
   }
@@ -149,7 +150,7 @@
 
 }
 
-@media (min-width: (@screen-xs-max)) and (max-width: (@screen-s)) {
+@media (min-width: (@screen-s)) and (max-width: (@screen-m-min)) {
   
   .s-no-padding {
     padding: 0;
@@ -157,7 +158,7 @@
 
 }
 
-@media (min-width: (@screen-s-max)) {
+@media (min-width: (@screen-m)) {
   .m-1 {
     .column-size(1);
   }
@@ -211,7 +212,7 @@
   }
 }
 
-@media (min-width: (@screen-s-max)) and (max-width: (@screen-m)) {
+@media (min-width: (@screen-m)) and (max-width: (@screen-l-min)) {
   
   .m-no-padding {
     padding: 0;
@@ -219,7 +220,7 @@
 
 }
 
-@media (min-width: (@screen-m-min)) {
+@media (min-width: (@screen-l)) {
   .l-1 {
     .column-size(1);
   }
@@ -273,7 +274,7 @@
   }
 }
 
-@media (min-width: (@screen-m-max)) and (max-width: (@screen-l)) {
+@media (min-width: (@screen-l)) {
   
   .l-no-padding {
     padding: 0;
